@@ -2,13 +2,14 @@
 
 
 import './App.css'
+import FeaturesMovies from './FeaturedMovies/FeaturedMovies'
 
 function App() {
   
 
   return (
     <>
-    
+    <FeaturesMovies/>
     </>
   )
 }
