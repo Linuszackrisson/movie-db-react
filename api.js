@@ -47,10 +47,10 @@ export const fetchRandomMovies = async () => {
     }
   };
   
-  // Function to generate a random word
-  const generateRandomWord = () => {
+// Function to generate a random word
+const generateRandomWord = () => {
     return words[Math.floor(Math.random() * words.length)];
-  };
+};
   
 
 // Function to search for movies by title
@@ -63,3 +63,53 @@ export const searchMoviesByTitle = async (title) => {
     throw error;
   }
 };
+
+// Function to fetch movie details by IMDB ID
+export const fetchMovieDetails = async (imdbID) => {
+    try {
+      const response = await axios.get(`${OMDB_API_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbID}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching movie details:', error);
+      throw error;
+    }
+  };
+  
+// Function to fetch movie logo by IMDB ID
+export const fetchMovieLogo = async (imdbID) => {
+    try {
+      const response = await axios.get(`${OMDB_API_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbID}`);
+      // Extract logo URL from response data (if available)
+      const logoURL = response.data.Poster;
+      return logoURL;
+    } catch (error) {
+      console.error('Error fetching movie logo:', error);
+      throw error;
+    }
+  };
+  
+// Function to fetch movie title by IMDB ID
+export const fetchMovieTitle = async (imdbID) => {
+    try {
+      const response = await axios.get(`${OMDB_API_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbID}`);
+      // Extract title from response data
+      const title = response.data.Title;
+      return title;
+    } catch (error) {
+      console.error('Error fetching movie title:', error);
+      throw error;
+    }
+  };
+  
+// Function to fetch movie description by IMDB ID
+export const fetchMovieDescription = async (imdbID) => {
+    try {
+      const response = await axios.get(`${OMDB_API_BASE_URL}?apikey=${OMDB_API_KEY}&i=${imdbID}`);
+      // Extract description from response data
+      const description = response.data.Plot;
+      return description;
+    } catch (error) {
+      console.error('Error fetching movie description:', error);
+      throw error;
+    }
+  };
