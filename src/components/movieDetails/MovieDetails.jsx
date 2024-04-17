@@ -1,3 +1,4 @@
+//MovieDetails.jsx
 import React, { useState, useEffect } from 'react';
 import { fetchMovieDetails, fetchMovieLogo } from '../../../api'; // Adjust the import path based on your folder structure
 import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';

@@ -1,8 +1,10 @@
+// MovieCard.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="movie">
+    <Link to={`/movie-details/${movie.imdbID}`} className="movie">
       <img src={movie.Poster} alt={`${movie.Title} Poster`} />
       <div className="movie-details">
         <p>Title: {movie.Title}</p>
@@ -10,7 +12,7 @@ const MovieCard = ({ movie }) => {
         <p>Genre: {movie.keyword}</p>
         {/* Add more details if needed */}
       </div>
-    </div>
+    </Link>
   );
 };
 
