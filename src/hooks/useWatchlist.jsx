@@ -5,13 +5,13 @@ const useWatchlist = () => {
   const [watchlist, setWatchlist] = useState([]);
 
   const addToWatchlist = (movie) => {
-    if (watchlist.some(m => m.imdbID === movie.imdbID)) {
-      const updatedWatchlist = watchlist.filter(m => m.imdbID !== movie.imdbID);
-      setWatchlist(updatedWatchlist);
-    } else {
-      const updatedWatchlist = [...watchlist, movie];
-      setWatchlist(updatedWatchlist);
-    }
+    setWatchlist(prevWatchlist => {
+      if (prevWatchlist.some(m => m.imdbID === movie.imdbID)) {
+        return prevWatchlist.filter(m => m.imdbID !== movie.imdbID);
+      } else {
+        return [...prevWatchlist, movie];
+      }
+    });
   };
 
   return [watchlist, addToWatchlist];
