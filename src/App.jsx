@@ -1,15 +1,19 @@
+import React from 'react';
+import './App.css';
+import './index.css'
 import FeaturesMovies from './components/featuredMovies/FeaturedMovies'
 import Header from './components/header/Header'
-import './index.css'
+
 
 function App() {
   
   return (
     <>
-    <Header />
-    <FeaturesMovies />
+      <Header />
+      <FeaturesMovies />
     </>
   )
 }
 
 export default App;
+
