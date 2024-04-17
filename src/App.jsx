@@ -1,17 +1,15 @@
-
-
-
-import './App.css'
+// App.jsx
+import React from 'react';
+import './App.css';
 import FeaturesMovies from './FeaturedMovies/FeaturedMovies'
 
-function App() {
-  
+const App = () => {
 
   return (
     <>
-    <FeaturesMovies/>
+      <FeaturesMovies />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
