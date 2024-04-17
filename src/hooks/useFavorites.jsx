@@ -1,18 +1,17 @@
 // useFavorites.js
-
 import { useState } from 'react';
 
 const useFavorites = () => {
   const [favorites, setFavorites] = useState([]);
 
   const addToFavorites = (movie) => {
-    if (favorites.some(m => m.imdbID === movie.imdbID)) {
-      const updatedFavorites = favorites.filter(m => m.imdbID !== movie.imdbID);
-      setFavorites(updatedFavorites);
-    } else {
-      const updatedFavorites = [...favorites, movie];
-      setFavorites(updatedFavorites);
-    }
+    setFavorites(prevFavorites => {
+      if (prevFavorites.some(m => m.imdbID === movie.imdbID)) {
+        return prevFavorites.filter(m => m.imdbID !== movie.imdbID);
+      } else {
+        return [...prevFavorites, movie];
+      }
+    });
   };
 
   return [favorites, addToFavorites];
