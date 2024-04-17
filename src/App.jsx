@@ -1,16 +1,19 @@
-// App.jsx
 import React from 'react';
 import './App.css';
-import FeaturesMovies from './FeaturedMovies/FeaturedMovies'
-import MovieDetails from './movieDetails/MovieDetails';
+import './index.css'
+import FeaturesMovies from './components/featuredMovies/FeaturedMovies'
+import Header from './components/header/Header'
 
-function App(){
 
+function App() {
+  
   return (
     <>
-      
+      <Header />
+      <FeaturesMovies />
     </>
-  );
+  )
 }
 
 export default App;
+

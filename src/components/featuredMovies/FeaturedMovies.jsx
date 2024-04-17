@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { fetchRandomMovies } from '../../api.js';
-import './FeaturedMovies.css'
-import MovieCard from '../MovieCard/MovieCard.jsx';
+import { useEffect, useState } from 'react';
+import { fetchRandomMovies } from '../../../api.js';
+import './featuredMovies.css'
+import MovieCard from '../movieCard/MovieCard.jsx';
 
 
 const FeaturesMovies = () => {
