@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { fetchMovieDetails, fetchMovieLogo } from '../../api'; // Adjust the import path based on your folder structure
-import AddToFavoritesButton from '../AddToFavoritesButton/AddToFavoritesButton';
-import AddToWatchlistButton from '../AddToWatchlistButton/AddToWatchlistButton';
-import useFavorites from '../hooks/useFavorites';
-import useWatchlist from '../hooks/useWatchlist';
+import { fetchMovieDetails, fetchMovieLogo } from '../../../api'; // Adjust the import path based on your folder structure
+import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
+import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
+import useFavorites from '../../hooks/useFavorites';
+import useWatchlist from '../../hooks/useWatchlist';
 
 const MovieDetails = ({ imdbID }) => {
   const [movie, setMovie] = useState(null);
