@@ -1,17 +1,15 @@
-
-
-
-import './App.css'
-import FeaturesMovies from './FeaturedMovies/FeaturedMovies'
+import FeaturesMovies from './components/featuredMovies/FeaturedMovies'
+import Header from './components/header/Header'
+import './index.css'
 
 function App() {
   
-
   return (
     <>
-    <FeaturesMovies/>
+    <Header />
+    <FeaturesMovies />
     </>
   )
 }
 
-export default App
+export default App;
