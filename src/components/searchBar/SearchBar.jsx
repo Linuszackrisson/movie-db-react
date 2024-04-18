@@ -1,8 +1,7 @@
-import "./searchBar.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { searchMoviesByTitle } from "../../../api";
-import MovieCard from "../movieCard/MovieCard";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./searchBar.css";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,7 +39,15 @@ const SearchBar = () => {
       <ul>
         {searchResults.map((movie) => (
           <li key={movie.imdbID}>
-            <MovieCard movie={movie} />
+            <Link to={`/movie-details/${movie.imdbID}`}>
+              <div className="search-result">
+                <img src={movie.Poster} alt={`${movie.Title} Poster`} />
+                <div className="movie-details">
+                  <p>{movie.Title}</p>
+                  <p>{movie.Year}</p>
+                </div>
+              </div>
+            </Link> 
           </li>
         ))}
       </ul>
