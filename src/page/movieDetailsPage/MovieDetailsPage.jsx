@@ -26,8 +26,10 @@ const MovieDetailsPage = ({
         favorites={favorites}
         watchlist={watchlist}
       />
-      <FavoriteList favorites={favorites} />
-      <Watchlist watchlist={watchlist} />
+      {/* Render FavoriteList with showList prop set to false */}
+      <FavoriteList favorites={favorites} showList={false} />
+      {/* Render Watchlist with showList prop set to false */}
+      <Watchlist watchlist={watchlist} showList={false} />
     </div>
   );
 };
