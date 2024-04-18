@@ -1,8 +1,8 @@
 .header {
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
     top: 0;
     box-shadow: 0 0px 2px rgba(39, 39, 39, 0.5);
     background: #000000;

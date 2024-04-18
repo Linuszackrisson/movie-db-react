@@ -28,7 +28,7 @@ const SearchBar = () => {
   return (
     <div className="search-bar">
       <form onSubmit={handleSearchSubmit}>
-        <input
+        <input className="search__input"
           type="text"
           placeholder="Search movies..."
           value={searchTerm}

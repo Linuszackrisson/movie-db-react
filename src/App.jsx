@@ -4,7 +4,6 @@ import FeaturesMovies from './components/featuredMovies/FeaturedMovies';
 import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import SearchResultPage from './page/searchResultPage/SearchResultPage';
-import FavoriteList from './components/favorites/Favorites';
 import './index.css';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
         <Route path="/movie-details/:imdbID" element={<MovieDetailsPage />} />
         <Route path="/search/:searchTerm" element={<SearchResultPage />} />
       </Routes>
-      <FavoriteList />
     </Router>
   );
 }
