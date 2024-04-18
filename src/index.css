@@ -7,7 +7,7 @@
 :root {
     --primary-color: #007bff;
     --secondary-color: #6c757d;
-    --details-color: #f8f9fa;
+    --details-color: #c0c0c0;
     --surface-color: #161616;
     --border-radius: 0.25rem;
 }
@@ -22,6 +22,7 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--details-color);
 }
 
 li {
