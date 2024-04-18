@@ -1,6 +1,5 @@
 // Watchlist.jsx
 import React from 'react';
-import { connect } from 'react-redux';
 
 const Watchlist = ({ watchlist }) => {
   console.log("Watchlist - Watchlist:", watchlist);
@@ -23,8 +22,4 @@ const Watchlist = ({ watchlist }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  watchlist: state.watchlist.watchlist,
-});
-
-export default connect(mapStateToProps)(Watchlist);
+export default Watchlist;

@@ -1,6 +1,5 @@
 // FavoriteList.jsx
 import React from 'react';
-import { connect } from 'react-redux';
 
 const FavoriteList = ({ favorites }) => {
   console.log("FavoriteList - Favorites:", favorites);
@@ -23,8 +22,4 @@ const FavoriteList = ({ favorites }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  favorites: state.favorites.favorites,
-});
-
-export default connect(mapStateToProps)(FavoriteList);
+export default FavoriteList;

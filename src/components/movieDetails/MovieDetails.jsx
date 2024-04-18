@@ -1,12 +1,8 @@
 // MovieDetails.jsx
-
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
 import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
-import { addToFavorites, removeFromFavorites } from '../../../redux/actions/favoritesActions';
-import { addToWatchlist, removeFromWatchlist } from '../../../redux/actions/watchListActions';
+import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
 
 const MovieDetails = ({
   imdbID,
@@ -83,16 +79,4 @@ const MovieDetails = ({
   );
 };
 
-const mapStateToProps = (state) => ({
-  favorites: state.favorites.favorites,
-  watchlist: state.watchlist.watchlist,
-});
-
-const mapDispatchToProps = {
-  addToFavorites,
-  removeFromFavorites,
-  addToWatchlist,
-  removeFromWatchlist,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails);
+export default MovieDetails;
