@@ -1,12 +1,16 @@
 // App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
 import FeaturesMovies from './components/featuredMovies/FeaturedMovies';
 import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import FavoritesPage from './page/favoritesPage/FavoritesPage';
 import WatchlistPage from './page/watchlistPage/WatchlistPage';
+
+import SearchResultPage from './page/searchResultPage/SearchResultPage';
+import './index.css';
+import './app.css';
+
 
 function App() {
   // State for managing favorites and watchlist
@@ -32,9 +36,9 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router >
       <Header />
-      <Routes>
+      <Routes className="page__wrapper">
         <Route path="/" element={<FeaturesMovies />} />
         <Route path="/movie-details/:imdbID" element={<MovieDetailsPage 
           addToFavorites={addToFavorites} 
@@ -46,6 +50,8 @@ function App() {
         />} />
         <Route path="/favorites" element={<FavoritesPage favorites={favorites}/>} />
         <Route path="/watchlist" element={<WatchlistPage watchlist={watchlist}/>} />
+        <Route path="/search/:searchTerm" element={<SearchResultPage />} />
+
       </Routes>
     </Router>
   );
