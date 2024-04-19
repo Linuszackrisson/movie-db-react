@@ -1,11 +1,12 @@
-import "./logo.css"
+import { Link } from 'react-router-dom';
+import "./logo.css";
 
 function Logo() {
   return (
-    <a href="index.html">
-        <img className="header__logo" src="./src/assets/jmlogo.svg" />
-    </a>
-  )
+    <Link to="/">
+      <img className="header__logo" src="/src/assets/jmlogo.svg" alt="just managing" />
+    </Link>
+  );
 }
 
-export default Logo
+export default Logo;

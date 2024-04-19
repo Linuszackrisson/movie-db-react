@@ -5,15 +5,16 @@ import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import SearchResultPage from './page/searchResultPage/SearchResultPage';
 import './index.css';
+import './app.css';
 
 function App() {
   return (
-    <Router>
+    <Router >
       <Header />
-      <Routes>
-        <Route path="/" element={<FeaturesMovies />} />
-        <Route path="/movie-details/:imdbID" element={<MovieDetailsPage />} />
-        <Route path="/search/:searchTerm" element={<SearchResultPage />} />
+      <Routes className="page__wrapper">
+          <Route path="/" element={<FeaturesMovies />} />
+          <Route path="/movie-details/:imdbID" element={<MovieDetailsPage />} />
+          <Route path="/search/:searchTerm" element={<SearchResultPage />} />
       </Routes>
     </Router>
   );

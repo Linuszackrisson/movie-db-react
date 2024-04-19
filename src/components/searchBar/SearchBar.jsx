@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { searchMoviesByTitle } from "../../../api";
 import { Link, useNavigate } from "react-router-dom";
 import { MagnifyingGlass } from "@phosphor-icons/react";
@@ -19,7 +19,7 @@ const SearchBar = () => {
       setSearchResults(response.Search || []);
       setShowDropdown(true);
     } catch (error) {
-      console.error("Error searching movies:", error);
+      console.error("Error searching for movies:", error);
     }
   };
 
@@ -30,7 +30,10 @@ const SearchBar = () => {
   };
 
   const handleInputBlur = () => {
-    setShowDropdown(false);
+    // Delay hiding the dropdown by 200 milliseconds
+    setTimeout(() => {
+      setShowDropdown(false);
+    }, 200);
   };
 
   return (
@@ -43,7 +46,7 @@ const SearchBar = () => {
           value={searchTerm}
           onChange={handleSearchChange}
           onFocus={() => setShowDropdown(true)}
-          onBlur={handleInputBlur} 
+          onBlur={handleInputBlur}
         />
         <button className="search__btn" type="submit">
           <MagnifyingGlass size={16} weight="bold" />
@@ -53,8 +56,8 @@ const SearchBar = () => {
         <ul className="search-result__list">
           {searchResults.map((movie) => (
             <li className="search-result__item" key={movie.imdbID}>
-              <Link to={`/movie-details/${movie.imdbID}`}>
-                <div className="search-result__content">
+              <div className="search-result__content">
+                <Link to={`/movie-details/${movie.imdbID}`}>
                   <img
                     className="search__poster"
                     src={movie.Poster}
@@ -64,8 +67,8 @@ const SearchBar = () => {
                     <p>{movie.Title}</p>
                     <p>{movie.Year}</p>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </li>
           ))}
         </ul>
