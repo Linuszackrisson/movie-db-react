@@ -22,7 +22,7 @@ const FeaturesMovies = () => {
 
   return (
     <div>
-      <h2>Featured Movies</h2>
+      <h2>Featured today</h2>
       <div className="movie-container">
         {movies.map((movie, index) => (
           <MovieCard key={index} movie={movie} />

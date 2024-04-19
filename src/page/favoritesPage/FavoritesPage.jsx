@@ -1,5 +1,5 @@
 //FavoritesPage.jsx
-
+import './FavoritesPage.css'
 import React from 'react';
 import FavoriteList from '../../components/favorites/Favorites'; 
 

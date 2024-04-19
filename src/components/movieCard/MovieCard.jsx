@@ -1,16 +1,13 @@
-// MovieCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './movieCard.css'; // Importera CSS-filen för stilar
 
 const MovieCard = ({ movie }) => {
   return (
-    <Link to={`/movie-details/${movie.imdbID}`} className="movie">
+    <Link to={`/movie-details/${movie.imdbID}`} className="movie-card">
       <img src={movie.Poster} alt={`${movie.Title} Poster`} />
       <div className="movie-details">
-        <p>Title: {movie.Title}</p>
-        <p>Year: {movie.Year}</p>
-        <p>Genre: {movie.keyword}</p>
-        {/* Add more details if needed */}
+        <p className="movie-title">{movie.Title}</p>
       </div>
     </Link>
   );
