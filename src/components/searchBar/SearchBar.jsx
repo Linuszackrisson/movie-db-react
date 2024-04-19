@@ -17,7 +17,7 @@ const SearchBar = () => {
     try {
       const response = await searchMoviesByTitle(term);
       setSearchResults(response.Search || []);
-      setShowDropdown(true);
+      setShowDropdown(term.length > 0 && response.Search && response.Search.length > 0); // Only show dropdown if search term is not empty and search results are found
     } catch (error) {
       console.error("Error searching for movies:", error);
     }
@@ -30,7 +30,6 @@ const SearchBar = () => {
   };
 
   const handleInputBlur = () => {
-    // Delay hiding the dropdown by 200 milliseconds
     setTimeout(() => {
       setShowDropdown(false);
     }, 200);
@@ -45,11 +44,11 @@ const SearchBar = () => {
           placeholder="Search movies..."
           value={searchTerm}
           onChange={handleSearchChange}
-          onFocus={() => setShowDropdown(true)}
+          onFocus={() => setShowDropdown(searchResults.length > 0)}
           onBlur={handleInputBlur}
         />
         <button className="search__btn" type="submit">
-          <MagnifyingGlass size={16} weight="bold" />
+          <MagnifyingGlass size={18} weight="bold" />
         </button>
       </form>
       {showDropdown && (
@@ -57,15 +56,16 @@ const SearchBar = () => {
           {searchResults.map((movie) => (
             <li className="search-result__item" key={movie.imdbID}>
               <div className="search-result__content">
+                <hr className="search-result__devider"/>
                 <Link to={`/movie-details/${movie.imdbID}`}>
                   <img
-                    className="search__poster"
+                    className="search-result__poster"
                     src={movie.Poster}
                     alt={`${movie.Title} Poster`}
                   />
                   <div className="movie-details">
-                    <p>{movie.Title}</p>
-                    <p>{movie.Year}</p>
+                    <p className="search-result__title">{movie.Title}</p>
+                    <p className="search-result__year">{movie.Year}</p>
                   </div>
                 </Link>
               </div>
