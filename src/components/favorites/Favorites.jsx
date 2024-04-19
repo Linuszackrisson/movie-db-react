@@ -1,6 +1,6 @@
-// Favorites.jsx
 import React from 'react';
-
+import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
+import './Favorites.css'
 const FavoriteList = ({ favorites, showList }) => {
   if (!favorites) {
     console.log("Favorites is undefined or null");
@@ -11,14 +11,13 @@ const FavoriteList = ({ favorites, showList }) => {
     console.log("Favorites:", favorites);
     return (
       <div>
-        <h1>Favorite Movies</h1>
-        <ul>
+        <h2>Favorite Movies</h2>
+        <div className="movie-list">
+          {/* Använd MovieCard för att rendera varje favoritfilm */}
           {favorites.map((movie, index) => (
-            <li key={movie.id || index}>
-              {movie.Title} ({movie.Year})
-            </li>
+            <MovieCard key={movie.id || index} movie={movie} />
           ))}
-        </ul>
+        </div>
       </div>
     );
   } else {

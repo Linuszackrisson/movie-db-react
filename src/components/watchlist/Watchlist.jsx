@@ -1,8 +1,7 @@
-// Watchlist.jsx
 import React from 'react';
-
+import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
+import './watchlist.css'
 const Watchlist = ({ watchlist, showList }) => {
-
   if (!watchlist) {
     console.log("Watchlist is undefined or null");
     return <p>Loading watchlist...</p>;
@@ -12,14 +11,13 @@ const Watchlist = ({ watchlist, showList }) => {
     console.log("Watchlist:", watchlist);
     return (
       <div>
-        <h1>Watchlist Movies</h1>
-        <ul>
+        <h2>Watchlist Movies</h2>
+        <div className="movie-list">
+          {/* Använd MovieCard för att rendera varje film i watchlistan */}
           {watchlist.map((movie, index) => (
-            <li key={movie.id || index}>
-              {movie.Title} ({movie.Year})
-            </li>
+            <MovieCard key={movie.id || index} movie={movie} />
           ))}
-        </ul>
+        </div>
       </div>
     );
   } else {
