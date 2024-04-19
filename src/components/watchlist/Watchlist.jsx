@@ -12,7 +12,7 @@ const Watchlist = ({ watchlist, showList }) => {
     console.log("Watchlist:", watchlist);
     return (
       <div>
-        <h2>Watchlist Movies</h2>
+        <h1>Watchlist Movies</h1>
         <ul>
           {watchlist.map((movie, index) => (
             <li key={movie.id || index}>

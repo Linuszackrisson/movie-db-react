@@ -11,7 +11,7 @@ const FavoriteList = ({ favorites, showList }) => {
     console.log("Favorites:", favorites);
     return (
       <div>
-        <h2>Favorite Movies</h2>
+        <h1>Favorite Movies</h1>
         <ul>
           {favorites.map((movie, index) => (
             <li key={movie.id || index}>
