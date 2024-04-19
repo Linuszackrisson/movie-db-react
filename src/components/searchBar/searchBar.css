@@ -42,42 +42,47 @@
   overflow-y: auto;
   width: 100%;
   max-height: 70vh;
-  border-radius: 0 0 .4rem .4rem;
+  border-radius: 0 0 1rem 1rem;
   background: rgba(24, 26, 30, 0.83);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
-  border-bottom: 1px solid rgb(48, 48, 48);
+  border: 1px solid rgb(41, 41, 41);
 }
 
 .search-result__item {
+  overflow-x: none;
   display: flex;
   flex-wrap: wrap;
   position: relative;
   overflow-y: scroll;
-  border: 1px solid white;
+  max-width: 100%;
+  margin: 0.5rem;
 }
 
 .search-result__content {
-  /* border-radius: 0.5rem; */
-  border: 1px solid white;
-  margin: 0.5rem;
-  padding: 0.5rem;
-
+  flex: 1;
+  width: 0 auto;
   cursor: pointer;
-  width: 100%;
 }
 
 .search-result__content a {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   align-items: center;
   user-select: none;
 }
 
+.search-result__content a:hover,
+.search-result__content a.focused {
+  background: var(--primary-color);
+}
+
 .search__poster {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   margin: 0 1rem 0 0.5rem;
   border-radius: 0.7rem;
   object-fit: cover;

@@ -2,7 +2,3 @@
     display: flex;
     gap: 1rem;
 }
-
-.nav__link a {
-    color: var(--primary-grey);
-}
