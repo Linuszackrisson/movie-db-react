@@ -2,8 +2,13 @@
 import React from 'react';
 
 const FavoriteList = ({ favorites, showList }) => {
+  if (!favorites) {
+    console.log("Favorites is undefined or null");
+    return <p>Loading favorites...</p>;
+  }
+  
   if (showList) {
-    console.log("FavoriteList - Favorites:", favorites);
+    console.log("Favorites:", favorites);
     return (
       <div>
         <h2>Favorite Movies</h2>
@@ -17,7 +22,7 @@ const FavoriteList = ({ favorites, showList }) => {
       </div>
     );
   } else {
-    console.log("FavoriteList - Favorites:", favorites);
+    console.log("Favorites:", favorites);
     return null; // Return null to avoid rendering the list visually
   }
 };
