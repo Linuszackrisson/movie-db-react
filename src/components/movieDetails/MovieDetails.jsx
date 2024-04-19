@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
 import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
+import MovieCard from '../../components/movieCard/MovieCard';
 
 const MovieDetails = ({
   imdbID,
@@ -61,8 +62,7 @@ const MovieDetails = ({
 
   return (
     <div>
-      <img src={logoURL} alt="Movie Poster" />
-      <h2>{movie.Title}</h2>
+      <MovieCard key={movie.id} movie={movie} />
       <p>Plot: {movie.Plot}</p>
       <p>Runtime: {movie.Runtime}</p>
       <p>Rating: {movie.imdbRating}</p>
