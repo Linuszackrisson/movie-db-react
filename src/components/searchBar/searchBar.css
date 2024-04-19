@@ -55,7 +55,6 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  overflow-y: scroll;
   max-width: 100%;
   margin: 0.5rem;
 }
