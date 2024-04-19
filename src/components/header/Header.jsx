@@ -1,14 +1,16 @@
-import { useState } from 'react';
-import SearchBar from '../searchBar/SearchBar';
-import Logo from '../logo/Logo';
-import Nav from '../../nav/Nav';
+import SearchBar from "../searchBar/SearchBar";
+import Logo from "../logo/Logo";
+import Nav from "../../nav/Nav";
+import "./header.css";
 
 const Header = () => {
   return (
-    <header>
-      <Logo />
-      <SearchBar />
-      <Nav />
+    <header className="header">
+      <div className="header__content">
+        <Logo />
+        <SearchBar />
+        <Nav />
+      </div>
     </header>
   );
 };

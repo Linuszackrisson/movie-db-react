@@ -1,10 +1,14 @@
 // App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
 import FeaturesMovies from './components/featuredMovies/FeaturedMovies';
 import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
+
+import SearchResultPage from './page/searchResultPage/SearchResultPage';
+import './index.css';
+import './app.css';
+
 
 function App() {
   // State for managing favorites and watchlist
@@ -30,18 +34,22 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router >
       <Header />
-      <Routes>
-        <Route path="/" element={<FeaturesMovies />} />
-        <Route path="/movie-details/:imdbID" element={<MovieDetailsPage 
-          addToFavorites={addToFavorites} 
-          removeFromFavorites={removeFromFavorites} 
-          addToWatchlist={addToWatchlist} 
-          removeFromWatchlist={removeFromWatchlist} 
-          favorites={favorites} 
-          watchlist={watchlist} 
-        />} />
+      <Routes className="page__wrapper">
+          <Route path="/" element={<FeaturesMovies />} />
+          <Route path="/movie-details/:imdbID" element={<MovieDetailsPage />} />
+          <Route path="/search/:searchTerm" element={<SearchResultPage />} />
+          <Route path="/" element={<FeaturesMovies />} />
+          <Route path="/movie-details/:imdbID" element={<MovieDetailsPage 
+            addToFavorites={addToFavorites} 
+            removeFromFavorites={removeFromFavorites} 
+            addToWatchlist={addToWatchlist} 
+            removeFromWatchlist={removeFromWatchlist} 
+            favorites={favorites} 
+            watchlist={watchlist} 
+          />} />
+
       </Routes>
     </Router>
   );
