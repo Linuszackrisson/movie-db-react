@@ -7,14 +7,17 @@ import MovieCard from '../../components/movieCard/MovieCard';
 
 const MovieDetails = ({
   imdbID,
+  movie,
+  setMovie,
   addToFavorites,
   removeFromFavorites,
   addToWatchlist,
   removeFromWatchlist,
   favorites,
   watchlist,
+  handleAddToFavorites,
+  handleAddToWatchlist,
 }) => {
-  const [movie, setMovie] = useState(null);
   const [logoURL, setLogoURL] = useState('');
   const [error, setError] = useState(null);
 
@@ -42,23 +45,8 @@ const MovieDetails = ({
     return <div>Loading...</div>;
   }
 
-  const handleAddToFavorites = () => {
-    const isFavorite = favorites.some(m => m.imdbID === movie.imdbID);
-    if (isFavorite) {
-      removeFromFavorites(movie.imdbID);
-    } else {
-      addToFavorites(movie);
-    }
-  };
 
-  const handleAddToWatchlist = () => {
-    const isInWatchlist = watchlist.some(m => m.imdbID === movie.imdbID);
-    if (isInWatchlist) {
-      removeFromWatchlist(movie.imdbID);
-    } else {
-      addToWatchlist(movie);
-    }
-  };
+  
 
   return (
     <div>
@@ -67,13 +55,22 @@ const MovieDetails = ({
       <p>Runtime: {movie.Runtime}</p>
       <p>Rating: {movie.imdbRating}</p>
       <p>Year: {movie.Year}</p>
+      
       <AddToWatchlistButton
-        onClick={handleAddToWatchlist}
+        movie={movie} 
+        handleAddToWatchlist={handleAddToWatchlist}
         isInWatchlist={watchlist.some(m => m.imdbID === movie.imdbID)}
+        watchlist={watchlist}
+        addToWatchlist={addToWatchlist}
+        removeFromWatchlist={removeFromWatchlist}
       />
       <AddToFavoritesButton
-        onClick={handleAddToFavorites}
+        movie={movie} 
+        handleAddToFavorites={handleAddToFavorites}
         isInFavorites={favorites.some(m => m.imdbID === movie.imdbID)}
+        favorites={favorites}
+        addToFavorites={addToFavorites}
+        removeFromFavorites={removeFromFavorites}
       />
     </div>
   );

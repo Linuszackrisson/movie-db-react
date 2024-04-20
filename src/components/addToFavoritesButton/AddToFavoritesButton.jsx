@@ -1,9 +1,13 @@
 // AddToFavoritesButton.jsx
 import React from 'react';
 
-const AddToFavoritesButton = ({ onClick, isInFavorites }) => {
+const AddToFavoritesButton = ({
+  handleAddToFavorites,
+  isInFavorites,
+  movie,
+}) => {
   return (
-    <button onClick={onClick}>
+    <button onClick={() => handleAddToFavorites(movie)}>
       {isInFavorites ? 'Remove from Favorites' : 'Add to Favorites'}
     </button>
   );

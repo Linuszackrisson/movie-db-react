@@ -1,7 +1,17 @@
 import React from 'react';
 import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
 import './watchlist.css'
-const Watchlist = ({ watchlist, showList }) => {
+import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
+import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
+
+const Watchlist = ({ 
+  favorites,
+  watchlist,
+  showList, 
+  handleAddToFavorites,
+  handleAddToWatchlist
+}) => {
+
   if (!watchlist) {
     console.log("Watchlist is undefined or null");
     return <p>Loading watchlist...</p>;
@@ -9,13 +19,27 @@ const Watchlist = ({ watchlist, showList }) => {
 
   if (showList) {
     console.log("Watchlist:", watchlist);
+
     return (
       <div>
         <h2>Watchlist Movies</h2>
         <div className="movie-list">
           {/* Använd MovieCard för att rendera varje film i watchlistan */}
           {watchlist.map((movie, index) => (
-            <MovieCard key={movie.id || index} movie={movie} />
+            <div key={movie.id || index}>
+            <MovieCard movie={movie} 
+            />
+            <AddToFavoritesButton
+              handleAddToFavorites={handleAddToFavorites}
+              isInFavorites={favorites.some(m => m.imdbID === movie.imdbID)}
+              movie={movie}
+            />
+            <AddToWatchlistButton
+            handleAddToWatchlist={handleAddToWatchlist}
+            isInWatchlist={true}
+            movie={movie} 
+            />
+          </div>
           ))}
         </div>
       </div>

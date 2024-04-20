@@ -3,10 +3,23 @@
 import React from 'react';
 import Watchlist from '../../components/watchlist/Watchlist' 
 
-const WatchlistPage = ({ watchlist }) => {
+const WatchlistPage = ({ 
+  favorites,
+  watchlist,
+  removeFromWatchlist, 
+  handleAddToWatchlist,
+  handleAddToFavorites
+ }) => {
   return (
     <div>
-      <Watchlist watchlist={watchlist} showList={true} /> {/* Pass props as needed */}
+      <Watchlist 
+      watchlist={watchlist}
+      favorites={favorites} 
+      showList={true}
+      removeFromWatchlist={removeFromWatchlist}
+      handleAddToWatchlist={handleAddToWatchlist}
+      handleAddToFavorites={handleAddToFavorites}
+      />
     </div>
   );
 };

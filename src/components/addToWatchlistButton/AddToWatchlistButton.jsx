@@ -1,9 +1,13 @@
 // AddToWatchlistButton.jsx
 import React from 'react';
 
-const AddToWatchlistButton = ({ onClick, isInWatchlist }) => {
+const AddToWatchlistButton = ({
+  handleAddToWatchlist,
+  isInWatchlist,
+  movie,
+}) => {
   return (
-    <button onClick={onClick}>
+    <button onClick={() => handleAddToWatchlist(movie)}>
       {isInWatchlist ? 'Remove from Watchlist' : 'Add to Watchlist'}
     </button>
   );
