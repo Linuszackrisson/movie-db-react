@@ -23,7 +23,7 @@ const MovieDetailsPage = ({
   const { imdbID } = useParams();
 
   return (
-    <>
+    <div className='page__wrapper'>
       <MovieDetails
         imdbID={imdbID}
         movie={movie}
@@ -41,7 +41,7 @@ const MovieDetailsPage = ({
       <FavoriteList favorites={favorites} showList={false} />
       {/* Render Watchlist with showList prop set to false */}
       <Watchlist watchlist={watchlist} showList={false} />
-    </>
+    </div>
   );
 };
 
