@@ -20,7 +20,7 @@ const FeaturesMovies = () => {
   }, []);
 
   return (
-    <div className="featured-container">
+    <div className="page__wrapper">
       <section className="featured-today">
         <div className="video-container">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/gZEOBlnFKmE" title="Fallout" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
