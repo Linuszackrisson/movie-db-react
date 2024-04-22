@@ -4,7 +4,16 @@ import { searchMoviesByTitle } from "../../../api";
 import MovieCard from "../../components/movieCard/MovieCard";
 import "./searchResultPage.css";
 
-const SearchResultPage = () => {
+const SearchResultPage = ({
+  favorites,
+  watchlist,
+  addToFavorites,
+  addToWatchlist,
+  removeFromFavorites,
+  removeFromWatchlist,
+  handleAddToFavorites,
+  handleAddToWatchlist
+}) => {
   const { searchTerm } = useParams();
   const [searchResults, setSearchResults] = useState([]);
 
@@ -26,7 +35,17 @@ const SearchResultPage = () => {
       <h1>Search Results for {searchTerm}</h1>
       <div className="movie-container">
         {searchResults.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} />
+          <MovieCard 
+          key={movie.imdbID} 
+          movie={movie}
+          handleAddToFavorites={handleAddToFavorites}
+          handleAddToWatchlist={handleAddToWatchlist}
+          favorites={favorites}
+          watchlist={watchlist}
+          addToFavorites={addToFavorites}
+          addToWatchlist={addToWatchlist}
+          removeFromFavorites={removeFromFavorites}
+          removeFromWatchlist={removeFromWatchlist}  />
         ))}
       </div>
     </div>
