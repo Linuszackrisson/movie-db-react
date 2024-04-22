@@ -10,7 +10,7 @@ const FavoritesPage = ({
   handleAddToWatchlist 
 }) => {
   return (
-    <div>
+    <div className='page__wrapper'>
       <FavoriteList 
       favorites={favorites}
       watchlist={watchlist} 

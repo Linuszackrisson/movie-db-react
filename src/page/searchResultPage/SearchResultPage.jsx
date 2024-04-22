@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import SearchResult from "../../components/searchResult/SearchResult";
 import { searchMoviesByTitle } from "../../../api";
+import MovieCard from "../../components/movieCard/MovieCard";
 import "./searchResultPage.css";
 
 const SearchResultPage = () => {
@@ -22,13 +22,13 @@ const SearchResultPage = () => {
   }, [searchTerm]);
 
   return (
-    <div>
-      <h1>Search Results for { searchTerm }</h1>
-      <ul className="search-results-list">
+    <div className="page__wrapper">
+      <h1>Search Results for {searchTerm}</h1>
+      <div className="movie-container">
         {searchResults.map((movie) => (
-          <SearchResult key={movie.imdbID} movie={movie} />
+          <MovieCard key={movie.imdbID} movie={movie} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
