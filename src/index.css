@@ -53,4 +53,5 @@ h3 {
 .page__wrapper {
     max-width: 1100px;
     margin: 0 auto;
+    padding: .5rem;
 }
