@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './movieCard.css'; // Importera CSS-filen för stilar
 import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
+import defaultmoviejpg from '../../assets/default-movie.jpg'; // Importera en standardbild
 
 const MovieCard = ({ 
   movie,
@@ -17,18 +18,18 @@ const MovieCard = ({
   removeFromFavorites,
   removeFromWatchlist
  }) => {
-
+  const altText = "Movie poster";
 
   return (
-    <div>
-      <Link to={`/movie-details/${movie.imdbID}`} className="movie-card">
-        <img src={movie.Poster} alt={`${movie.Title} Poster`} />
+    <div className="movie-card">
+      <Link to={`/movie-details/${movie.imdbID}`}>
+        <img src={movie.Poster} alt={altText} onError={(e) => { e.target.onerror = null; e.target.src = defaultmoviejpg; }} />
         <div className="movie-details">
           <p className="movie-title">{movie.Title}</p>
-        </div>     
+        </div>
       </Link>
-      <div>
-      <AddToWatchlistButton
+      <div className="movie-buttons">
+        <AddToWatchlistButton
           movie={movie} 
           handleAddToWatchlist={handleAddToWatchlist}
           isInWatchlist={watchlist && watchlist.some(m => m.imdbID === movie.imdbID)}
@@ -36,7 +37,7 @@ const MovieCard = ({
           addToWatchlist={addToWatchlist}
           removeFromWatchlist={removeFromWatchlist}
         />
-        <AddToFavoritesButton
+        <AddToFavoritesButton 
           movie={movie} 
           handleAddToFavorites={handleAddToFavorites}
           isInFavorites={favorites && favorites.some(m => m.imdbID === movie.imdbID)}
@@ -45,7 +46,6 @@ const MovieCard = ({
           removeFromFavorites={removeFromFavorites}
         />
       </div>
-      
     </div>
   );
 };

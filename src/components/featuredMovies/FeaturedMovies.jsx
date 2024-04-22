@@ -24,7 +24,7 @@ const FeaturesMovies = ({
     const fetchMovies = async () => {
       try {
         const randomMovies = await fetchRandomMovies();
-        setMovies(randomMovies.slice(0, 5)); // Slice to get only five movies
+        setMovies(randomMovies.slice(0, 8)); // Slice to get only five movies
       } catch (error) {
         console.error('Error fetching movies:', error);
       }
@@ -56,7 +56,7 @@ const FeaturesMovies = ({
         </div>
       </section>
       <h2 className="Tips-title">You May also like</h2>
-      <div className="movie-container">
+      <div className="movie-grid-container">
         {movies.map((movie, index) => (
           <MovieCard 
           key={index}

@@ -9,14 +9,14 @@ const AddToFavoritesButton = ({
 }) => {
   return (
     <>
-      <button onClick={() => handleAddToFavorites(movie)}>
+      <button className='FavoriteButton' onClick={() => handleAddToFavorites(movie)}>
         {isInFavorites ? (
           <>
-            <Heart size={16} color="#2160b7" weight="fill" /> 
+            <Heart className='icon' size={22} color="#2160b7" weight="fill" /> 
           </>
         ) : (
           <>
-            <Heart size={16} weight='bold' /> 
+            <Heart className='icon' size={22} weight='bold' /> 
           </>
         )}
       </button>
