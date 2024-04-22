@@ -1,5 +1,6 @@
 // AddToWatchlistButton.jsx
 import React from 'react';
+import { Bookmark } from "@phosphor-icons/react";
 
 const AddToWatchlistButton = ({
   handleAddToWatchlist,
@@ -7,9 +8,19 @@ const AddToWatchlistButton = ({
   movie,
 }) => {
   return (
-    <button onClick={() => handleAddToWatchlist(movie)}>
-      {isInWatchlist ? 'Remove from Watchlist' : 'Add to Watchlist'}
-    </button>
+    <>
+      <button onClick={() => handleAddToWatchlist(movie)}>
+        {isInWatchlist ? (
+          <>
+            <Bookmark size={16} color="#2160b7" weight="fill" /> 
+          </>
+        ) : (
+          <>
+            <Bookmark size={16} weight='bold' /> 
+          </>
+        )}
+      </button>
+    </>
   );
 };
 

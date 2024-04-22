@@ -4,8 +4,21 @@ import './featuredMovies.css'
 import MovieCard from '../movieCard/MovieCard.jsx';
 
 
-const FeaturesMovies = () => {
+const FeaturesMovies = ({
+  favorites,
+  watchlist,
+  addToFavorites,
+  addToWatchlist,
+  removeFromFavorites,
+  removeFromWatchlist,
+  handleAddToFavorites,
+  handleAddToWatchlist
+  
+}) => {
   const [movies, setMovies] = useState([]);
+  
+  
+
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -25,7 +38,20 @@ const FeaturesMovies = () => {
       <h2>Featured today</h2>
       <div className="movie-container">
         {movies.map((movie, index) => (
-          <MovieCard key={index} movie={movie} />
+          <MovieCard 
+          key={index}
+            movie={movie}
+            addToFavorites={addToFavorites}
+            addToWatchlist={addToWatchlist}
+            removeFromFavorites={removeFromFavorites}
+            removeFromWatchlist={removeFromWatchlist}
+            isInFavorites={favorites.some((favMovie) => favMovie.imdbID === movie.imdbID)}
+            isInWatchlist={watchlist.some((watchlistMovie) => watchlistMovie.imdbID === movie.imdbID)}
+            favorites={favorites}
+            watchlist={watchlist}
+            handleAddToWatchlist={handleAddToWatchlist}
+            handleAddToFavorites={handleAddToFavorites} 
+            />
         ))}
       </div>
     </div>

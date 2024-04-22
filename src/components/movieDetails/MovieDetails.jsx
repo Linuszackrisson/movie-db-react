@@ -16,7 +16,7 @@ const MovieDetails = ({
   favorites,
   watchlist,
   handleAddToFavorites,
-  handleAddToWatchlist,
+  handleAddToWatchlist
 }) => {
   const [logoURL, setLogoURL] = useState('');
   const [error, setError] = useState(null);
@@ -50,28 +50,21 @@ const MovieDetails = ({
 
   return (
     <div>
-      <MovieCard key={movie.id} movie={movie} />
+      <MovieCard
+      key={movie.id} movie={movie}
+      handleAddToWatchlist={handleAddToWatchlist}
+      handleAddToFavorites={handleAddToFavorites}
+      watchlist={watchlist}
+      favorites={favorites}
+      addToFavorites={{addToFavorites}}
+      addToWatchlist={addToWatchlist}
+      removeFromFavorites={removeFromFavorites}
+      removeFromWatchlist={removeFromWatchlist}
+       />
       <p>Plot: {movie.Plot}</p>
       <p>Runtime: {movie.Runtime}</p>
       <p>Rating: {movie.imdbRating}</p>
       <p>Year: {movie.Year}</p>
-      
-      <AddToWatchlistButton
-        movie={movie} 
-        handleAddToWatchlist={handleAddToWatchlist}
-        isInWatchlist={watchlist.some(m => m.imdbID === movie.imdbID)}
-        watchlist={watchlist}
-        addToWatchlist={addToWatchlist}
-        removeFromWatchlist={removeFromWatchlist}
-      />
-      <AddToFavoritesButton
-        movie={movie} 
-        handleAddToFavorites={handleAddToFavorites}
-        isInFavorites={favorites.some(m => m.imdbID === movie.imdbID)}
-        favorites={favorites}
-        addToFavorites={addToFavorites}
-        removeFromFavorites={removeFromFavorites}
-      />
     </div>
   );
 };

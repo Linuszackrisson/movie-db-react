@@ -27,17 +27,12 @@ const FavoriteList = ({
           {/* Använd MovieCard för att rendera varje favoritfilm */}
           {favorites.map((movie, index) => (
             <div key={movie.id || index}>
-            <MovieCard movie={movie} 
-            />
-            <AddToFavoritesButton
-              handleAddToFavorites={handleAddToFavorites}
-              isInFavorites={true}
-              movie={movie}
-            />
-            <AddToWatchlistButton
-            handleAddToWatchlist={handleAddToWatchlist}
-            isInWatchlist={watchlist.some(m => m.imdbID === movie.imdbID)}
-            movie={movie} 
+            <MovieCard 
+            movie={movie}
+            favorites={favorites}
+            watchlist={watchlist}
+            handleAddToFavorites={handleAddToFavorites}
+            handleAddToWatchlist={handleAddToWatchlist} 
             />
           </div>
             
