@@ -5,6 +5,7 @@
     background: #090909;
     width: 100%;
     padding: .8rem 1.5rem;
+    z-index: 1;
   }
 
   .header__content {
