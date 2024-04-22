@@ -99,7 +99,16 @@ function App() {
           handleAddToFavorites={handleAddToFavorites}
           handleAddToWatchlist={handleAddToWatchlist} 
         />} />
-        <Route path="/search/:searchTerm" element={<SearchResultPage />} />
+        <Route path="/search/:searchTerm" element={<SearchResultPage
+        handleAddToFavorites={handleAddToFavorites}
+        handleAddToWatchlist={handleAddToWatchlist}
+        favorites={favorites}
+        watchlist={watchlist}
+        addToFavorites={addToFavorites}
+        addToWatchlist={addToWatchlist}
+        removeFromFavorites={removeFromFavorites}
+        removeFromWatchlist={removeFromWatchlist} 
+        />} />
       </Routes>
     </Router>
   );
