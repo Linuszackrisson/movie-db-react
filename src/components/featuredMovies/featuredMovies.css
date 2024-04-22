@@ -1,14 +1,70 @@
-.movie-container {
+.featured-container {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .featured-today {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .video-container {
+    flex: 1;
+  }
+  
+  .info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ändrat från space-between till center */
+  }
+  
+  .movie-container {
     display: flex;
     flex-wrap: wrap;
-    width: 1100px;
-    margin: auto;
     gap: 1rem;
-    
-
-}
-
-h2 {
-    text-align: center;
-    padding-top: 0.6rem;
-}
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .Featured-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .genre-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .genre-text {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 0 0.8rem;
+    font-size: 0.8rem;
+    border-color: #6c757d
+  }
+  
+  .prime-video-logo {
+    width: 80px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .prime-video-logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ändrat från space-evenly till space-between */
+    height: 100%; /* Lägg till för att säkerställa att texten tar upp hela utrymmet vertikalt */
+  }
+  
