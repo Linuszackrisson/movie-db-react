@@ -23,7 +23,7 @@ const MovieDetailsPage = ({
   const { imdbID } = useParams();
 
   return (
-    <div>
+    <div className='page__wrapper'>
       <MovieDetails
         imdbID={imdbID}
         movie={movie}

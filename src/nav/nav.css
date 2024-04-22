@@ -1,13 +1,11 @@
 .nav__list {
     display: flex;
     gap: 1.5rem;
-    /* padding: 0 1rem 0 0; */
 }
 
 .nav__link {
     display: inline-block;
     position: relative;
-
 }
 
 .nav__link a {

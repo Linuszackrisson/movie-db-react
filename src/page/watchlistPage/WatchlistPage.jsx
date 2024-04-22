@@ -1,5 +1,4 @@
 //WatchlistPage.jsx
-
 import React from 'react';
 import Watchlist from '../../components/watchlist/Watchlist' 
 
@@ -11,7 +10,7 @@ const WatchlistPage = ({
   handleAddToFavorites
  }) => {
   return (
-    <div>
+    <div className='page__wrapper'>
       <Watchlist 
       watchlist={watchlist}
       favorites={favorites} 
