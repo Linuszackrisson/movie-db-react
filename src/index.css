@@ -55,3 +55,22 @@ h3 {
     margin: 0 auto;
     padding: .5rem;
 }
+
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Antal kolumner baserat på föräldrakontainerns bredd, minst 240px breda */
+    gap: 0.5rem;
+    }
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WatchlistButton, .FavoriteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

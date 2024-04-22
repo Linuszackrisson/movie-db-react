@@ -1,10 +1,4 @@
-.featured-container {
-    max-width: 1100px;
-    margin: auto;
-    padding-top: 2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+
   
   .featured-today {
     display: flex;
@@ -23,13 +17,7 @@
     justify-content: center; /* Ändrat från space-between till center */
   }
   
-  .movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: 1100px;
-    margin: auto;
-  }
+ 
   
   .Featured-title {
     text-align: left;

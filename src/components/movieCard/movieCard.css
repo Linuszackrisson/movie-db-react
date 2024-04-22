@@ -1,35 +1,83 @@
 .movie-card {
-    display: block;
-    text-decoration: none;
-    width: 200px;
-    border: 1px solid #131519;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    text-align: center;
-    
-    background-color: #1A1A1A;
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  min-width: 240px;
+  padding: 0.5rem;
+  background-color: #161616;
+  border-radius: var(--border-radius);
+  border: solid .5px #1a1919;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Lägg till filter-transition */
+}
+
+.movie-card:hover  {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  filter: brightness(115%); /* Öka ljusstyrkan när musen svävar över */
+}
+
+.movie-card img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
   
-  .movie-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}
+
+
+
+.movie-title {
+  margin: 0;
+}
+
+.movie-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
   
-  .movie-card img {
-    width: 100%;
-    min-height: 300px;
-    height: auto;
-    object-fit: cover;
-    border-bottom: 1px solid #131519;
-  }
   
-  .movie-details {
-    padding: 10px;
-  }
+}
+
+/* Justera storlek och utseende på knapparna efter behov */
+.movie-buttons button {
+  margin-bottom: 5px;
   
-  .movie-title {
-    font-weight: bold;
-    margin: 0;
-  }
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #c0c0c0;
+  box-shadow: 0 0 2px rgba(46, 46, 46, 0.381);
+  backdrop-filter: blur(120px);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
   
+  
+  
+}
+
+/* Stilar för favoritknappen */
+.addToFavorites {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.addToFavorites:hover {
+  background-color: #f5c6cb;
+}
+
+/* Stilar för watchlist-knappen */
+.addToWatchlist {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.addToWatchlist:hover {
+  background-color: #b8daff;
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5179/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="./Awesome database_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5179/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link href="./Awesome database_files/css2" rel="stylesheet">
+    <title>Awesome database</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/featuredMovies/featuredMovies.css">
+  
+  .featured-today {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .video-container {
+    flex: 1;
+  }
+  
+  .info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ändrat från space-between till center */
+  }
+  
+ 
+  
+  .Featured-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .genre-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .genre-text {
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 0 0.8rem;
+    font-size: 0.8rem;
+    border-color: #6c757d
+  }
+  
+  .prime-video-logo {
+    width: 80px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .prime-video-logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ändrat från space-evenly till space-between */
+    height: 100%; /* Lägg till för att säkerställa att texten tar upp hela utrymmet vertikalt */
+  }
+  </style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/movieCard/movieCard.css">.movie-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  min-width: 240px;
+  margin: 10px;
+  padding: 0.5rem;
+  background-color: #161616;
+  border-radius: var(--border-radius);
+  border: solid .5px #1a1919;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Lägg till filter-transition */
+}
+
+.movie-card:hover  {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  filter: brightness(115%); /* Öka ljusstyrkan när musen svävar över */
+}
+
+.movie-card img {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  
+}
+
+.movie-details {
+  
+}
+
+.movie-title {
+  margin: 0;
+}
+
+.movie-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  
+  
+}
+
+/* Justera storlek och utseende på knapparna efter behov */
+.movie-buttons button {
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #c0c0c0;
+  box-shadow: 0 0 2px rgba(46, 46, 46, 0.381);
+  backdrop-filter: blur(120px);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  
+  
+  
+}
+
+/* Stilar för favoritknappen */
+.addToFavorites {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.addToFavorites:hover {
+  background-color: #f5c6cb;
+}
+
+/* Stilar för watchlist-knappen */
+.addToWatchlist {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.addToWatchlist:hover {
+  background-color: #b8daff;
+}
+</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/searchBar/searchBar.css">.search-bar {
+  flex: 1;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  max-width: 38rem;
+  border-radius: 10px;
+}
+
+.search__input {
+  font-size: 22px;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  text-indent: 1.6rem;
+  border-radius: .7rem;
+  color: var(--primary-grey);
+  background: rgba(24, 26, 30, 0.992);
+  border: 1px solid transparent;
+  padding: .6rem;
+  transform: scaleX(.995);
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__btn {
+  z-index: 3;
+  padding: 1rem;
+  font-size: .9rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #757575;
+  border: none;
+  cursor: pointer;
+}
+
+.search__btn:active {
+  color: var(--details-color);
+}
+
+.search-result__list {
+  margin: 0 auto;
+  z-index: 1;
+  position: absolute;
+  overflow-y: auto;
+  width: 100%;
+  max-height: 75vh;
+  background: rgba(24, 26, 30, 0.83);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 2px solid rgb(55, 55, 55);
+  border-radius: .85rem;
+  transform: scaleY(1.004);
+}
+
+.search-result__devider {
+  width: 97%;
+  margin: 0 auto;
+  opacity: 0.09;
+}
+
+.search-result__item {
+  overflow-x: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+  margin: 0 .5rem;
+}
+
+.search-result__item:first-child {
+  padding-top: 3.25rem;
+}
+
+.search-result__item:last-child {
+  padding-bottom: .6rem;
+}
+
+.search-result__content {
+  flex: 1;
+  width: 0 auto;
+  cursor: pointer;
+}
+
+.search-result__content a {
+  border-radius: .4rem;
+  padding: .8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  animation: ease-in;
+}
+
+.search-result__content a:hover,
+.search-result__content a.focused {
+  background: var(--primary-color);
+  transition: 0.2s;
+}
+
+.search-result__poster {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 1.5rem 0 0.5rem;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-result__title {
+  color: white;
+}
+
+.search-result__year {
+  font-weight: 300;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/logo/logo.css">.header__logo {
+    width: 100%;
+    max-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/nav/nav.css">.nav__list {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav__link {
+    display: inline-block;
+    position: relative;
+}
+
+.nav__link a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    transform: scaleX(0);
+    background-color: var(--details-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    border-radius: 2rem;
+  }
+  
+  .nav__link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .nav__link:active {
+    transform: scale(.98);
+  }</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/header/header.css">.header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0px 2px rgba(39, 39, 39, 0.5);
+    background: #090909;
+    width: 100%;
+    padding: .8rem 1.5rem;
+  }
+
+  .header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 1rem;
+  }</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/favorites/Favorites.css"></style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/components/watchlist/watchlist.css"></style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/page/searchResultPage/searchResultPage.css"></style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/index.css">* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2160b7;
+    --secondary-color: #6c757d;
+    --details-color: #c0c0c0;
+    --surface-color: #161616;
+    --border-radius: 0.25rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #121212;
+    color: rgb(218, 218, 218);
+}
+
+a {
+    text-decoration: none;
+    color: var(--details-color);
+}
+
+li {
+    list-style-type: none;
+}
+
+/* Rubriker */
+h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+.page__wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: .5rem;
+}
+
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Antal kolumner baserat på föräldrakontainerns bredd, minst 240px breda */
+    
+    }
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WatchlistButton, .FavoriteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}</style><style type="text/css" data-vite-dev-id="C:/Users/Linus/OneDrive/Skrivbord/FredagTwo/movie-db-react/src/app.css"></style></head>
+  <body>
+    <div id="root"><header class="header"><div class="header__content"><a href="http://localhost:5179/"><img class="header__logo" src="./Awesome database_files/jmlogo.svg" alt="just managing"></a><div class="search-bar"><form><input class="search__input" type="text" placeholder="Search movies..." value=""><button class="search__btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path></svg></button></form></div><nav><ul class="nav__list"><li class="nav__link"><a href="http://localhost:5179/watchlist"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg>Watchlist</a></li><li class="nav__link"><a href="http://localhost:5179/favorites"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg>Favorites</a></li></ul></nav></div></header><div class="page__wrapper"><section class="featured-today"><div class="video-container"><iframe width="560" height="315" src="./Awesome database_files/gZEOBlnFKmE.html" title="Fallout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><div class="info-container"><div class="text-container"><h3 class="Featured-title">Fallout</h3><h4>"Fallout: Apocalypse with a punchline."</h4><p>In a future, post-apocalyptic Los Angeles brought about by nuclear decimation, citizens must live in underground bunkers to protect themselves from radiation, mutants and bandits.</p><div class="genre-container"><p class="genre-text">Action</p><p class="genre-text">Adventure</p><p class="genre-text">Drama</p></div></div><a href="https://www.primevideo.com/detail/Fallout/0HAQAA7JM43QWX0H6GUD3IOF70" target="_blank" rel="noopener noreferrer"><img src="./Awesome database_files/Amazon_Prime_Video_blue_logo_1.svg.png" alt="Amazon Prime Video Logo" class="prime-video-logo"></a></div></section><h2 class="Tips-title">You May also like</h2><div class="movie-grid-container"><div class="movie-card"><a href="http://localhost:5179/movie-details/tt0089643"><img src="./Awesome database_files/MV5BM2E1OTkyN2QtMjI4NS00MGRmLTkxZmMtNjgyY2NhNTkzMjEwXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Murphy's Romance</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt0960890"><img src="./Awesome database_files/MV5BMTI5MTM4NTA5MV5BMl5BanBnXkFtZTcwNzc0MTU2MQ@@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Zombie Strippers!</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt4571976"><img src="./Awesome database_files/MV5BZWYwYzQ3ZWYtZmJmOS00Y2M2LTk4NTMtNDhkMWEzMjgwMTJhXkEyXkFqcGdeQXVyNTg0NzA4Ng@@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Biography: I Want My MTV</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt5595168"><img src="./Awesome database_files/MV5BOTEwNzMxNTU5M15BMl5BanBnXkFtZTgwMzMyMjg3OTE@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Kingsglaive: Final Fantasy XV</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt0287717"><img src="./Awesome database_files/MV5BNWM2N2JjYzYtYWIyNS00NDc3LWFkNDctMmYwOWQyZTcxYjZhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Spy Kids 2: Island of Lost Dreams</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt2870756"><img src="./Awesome database_files/MV5BMTQ3NDY5NjIwN15BMl5BanBnXkFtZTgwNjQ2ODkxMjE@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Magic in the Moonlight</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt0120586"><img src="./Awesome database_files/MV5BZTJhN2FkYWEtMGI0My00YWM4LWI2MjAtM2UwNjY4MTI2ZTQyXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">American History X</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div><div class="movie-card"><a href="http://localhost:5179/movie-details/tt2316204"><img src="./Awesome database_files/MV5BYzVkMjRhNzctOGQxMC00OGE2LWJhN2EtNmYyODRiMDNlM2ZmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="Movie poster"><div class="movie-details"><p class="movie-title">Alien: Covenant</p></div></a><div class="movie-buttons"><button class="WatchlistButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M184,28H72A20,20,0,0,0,52,48V224a12,12,0,0,0,18.36,10.18l57.63-36,57.65,36A12,12,0,0,0,204,224V48A20,20,0,0,0,184,28Zm-4,24V154.35l-45.65-28.53a12,12,0,0,0-12.72,0L76,154.35V52ZM134.35,173.82a12,12,0,0,0-12.72,0L76,202.35v-19.7l52-32.5,52,32.5v19.7Z"></path></svg></button><button class="FavoriteButton"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256" class="icon"><path d="M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z"></path></svg></button></div></div></div></div></div>
+    <script type="module" src="./Awesome database_files/main.jsx"></script>
+  
+
+</body></html>
