@@ -59,7 +59,7 @@ h3 {
 .movie-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Antal kolumner baserat på föräldrakontainerns bredd, minst 240px breda */
-    gap: 0.5rem;
+    gap: 1rem;
     }
 
 .icon {
