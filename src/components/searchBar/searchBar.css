@@ -58,6 +58,11 @@
   border: 2px solid rgb(55, 55, 55);
   border-radius: .85rem;
   transform: scaleY(1.004);
+  -ms-overflow-style: none;
+}
+
+.search-result__list::-webkit-scrollbar {
+  display: none;
 }
 
 .search-result__devider {
