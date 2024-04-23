@@ -1,0 +1,35 @@
+.movie-details-card .movie-card img {
+    width: 450px;
+    object-fit: cover;
+    min-height: 650px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+       
+}
+
+.movie-details-card .movie-card {
+    display: flex;
+    flex-direction: row;
+    height: 650px
+    
+}
+
+.movie-details-card .movie-title {
+    display: none;
+    
+}
+
+.movie-details-text {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    
+    
+}
+

@@ -24,6 +24,7 @@ const MovieCard = ({
   return (
     <div className="movie-card">
       <Link to={`/movie-details/${movie.imdbID}`}>
+        
         <img src={movie.Poster} alt={altText} onError={(e) => { e.target.onerror = null; e.target.src = defaultmoviejpg; }} />
         <div className="movie-details">
           <p className="movie-title">{movie.Title}</p>
@@ -49,11 +50,23 @@ const MovieCard = ({
 
       </div>
       {showDetails && (
-        <div>
-          <p>Plot: {movie.Plot}</p>
-          <p>Runtime: {movie.Runtime}</p>
-          <p>Rating: {movie.imdbRating}</p>
-          <p>Year: {movie.Year}</p>
+        <div className='movie-details-text'>
+          <div className="movie-info">
+          <h1>{movie.Title}</h1>
+          <p><strong>Release year:</strong> {movie.Year}</p>
+          <p><strong>Imdb Rating:</strong> {movie.imdbRating}</p>
+          <p><strong>Length:</strong> {movie.Runtime}</p>
+          <p><strong>Director:</strong> {movie.Director}</p>
+          <p><strong>Featured actors:</strong> {movie.Actors}</p>
+          <p><strong>Genre:</strong> {movie.Genre}</p>
+          <p><strong>Type:</strong> {movie.Type}</p>
+          <p><strong>Country:</strong> {movie.Country}</p>
+          </div>
+
+          <div className="movie-plot"><p>{movie.Plot}</p>
+          </div>
+          
+          
         </div>
       )}
 
