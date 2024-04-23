@@ -2,6 +2,7 @@
 
 import React from 'react';
 import FeaturesMovies from '../../components/featuredMovies/FeaturedMovies'
+import './homepage.css'
 
 const Home = ({
     handleOperations,

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchRandomMovies } from '../../../api.js';
-import './featuredMovies.css';
 import MovieCard from '../movieCard/MovieCard.jsx';
 
 const FeaturesMovies = ({ lists,
@@ -24,7 +23,7 @@ const FeaturesMovies = ({ lists,
   }, []);
 
   return (
-    <div className="page__wrapper">
+    <>
       <h2 className="Tips-title">You May also like</h2>
       <div className="movie-grid-container">
         {movies.map((movie, index) => (
@@ -38,7 +37,7 @@ const FeaturesMovies = ({ lists,
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
