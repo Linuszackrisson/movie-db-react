@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import FeaturesMovies from './components/featuredMovies/FeaturedMovies';
+import Home from './page/homePage/homePage';
 import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import FavoritesPage from './page/favoritesPage/FavoritesPage';
@@ -73,7 +73,7 @@ function App() {
     <Router >
       <Header />
       <Routes className="page__wrapper">
-        <Route path="/" element={<FeaturesMovies
+        <Route path="/" element={<Home
           handleOperations={handleOperations}
           lists={lists}
           {...lists}
