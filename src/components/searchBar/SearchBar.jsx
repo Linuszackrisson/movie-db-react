@@ -10,6 +10,17 @@ const SearchBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const clearSearch = () => {
+      setSearchTerm("");
+    };
+    clearSearch();
+
+    const unlisten = navigate(clearSearch);
+
+    return unlisten;
+  }, [navigate]);
+
   const handleSearchChange = async (event) => {
     const term = event.target.value;
     setSearchTerm(term);
@@ -17,7 +28,9 @@ const SearchBar = () => {
     try {
       const response = await searchMoviesByTitle(term);
       setSearchResults(response.Search || []);
-      setShowDropdown(term.length > 0 && response.Search && response.Search.length > 0); // Only show dropdown if search term is not empty and search results are found
+      setShowDropdown(
+        term.length > 0 && response.Search && response.Search.length > 0
+      );
     } catch (error) {
       console.error("Error searching for movies:", error);
     }
@@ -42,7 +55,7 @@ const SearchBar = () => {
           className="search__input"
           type="text"
           placeholder="Search movies..."
-          aria-label="Search movies" 
+          aria-label="Search movies"
           value={searchTerm}
           onChange={handleSearchChange}
           onFocus={() => setShowDropdown(searchResults.length > 0)}
@@ -57,7 +70,7 @@ const SearchBar = () => {
           {searchResults.map((movie) => (
             <li className="search-result__item" key={movie.imdbID}>
               <div className="search-result__content">
-                <hr className="search-result__devider"/>
+                <hr className="search-result__devider" />
                 <Link to={`/movie-details/${movie.imdbID}`}>
                   <img
                     className="search-result__poster"

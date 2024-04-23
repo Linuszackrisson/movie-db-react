@@ -1,5 +1,5 @@
 // MovieDetails.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
 import MovieCard from '../../components/movieCard/MovieCard';
 import './movieDetails.css'
@@ -49,7 +49,7 @@ const MovieDetails = ({
         key={movie.id} movie={movie}
         {...handleOperations}
         {...lists}
-        showDetails={true} // This will render the details
+        showDetails={true} // This will render details
       />
       </div>
     </div>
