@@ -5,7 +5,7 @@ import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
 import defaultmoviejpg from '../../assets/default-movie.jpg'; // Importera en standardbild
 
-const MovieCard = ({ 
+const MovieCard = ({
   movie,
   handleAddToWatchlist,
   handleAddToFavorites,
@@ -16,8 +16,9 @@ const MovieCard = ({
   addToFavorites,
   addToWatchlist,
   removeFromFavorites,
-  removeFromWatchlist
- }) => {
+  removeFromWatchlist,
+  showDetails
+}) => {
   const altText = "Movie poster";
 
   return (
@@ -30,22 +31,32 @@ const MovieCard = ({
       </Link>
       <div className="movie-buttons">
         <AddToWatchlistButton
-          movie={movie} 
+          movie={movie}
           handleAddToWatchlist={handleAddToWatchlist}
           isInWatchlist={watchlist && watchlist.some(m => m.imdbID === movie.imdbID)}
           watchlist={watchlist}
           addToWatchlist={addToWatchlist}
           removeFromWatchlist={removeFromWatchlist}
         />
-        <AddToFavoritesButton 
-          movie={movie} 
+        <AddToFavoritesButton
+          movie={movie}
           handleAddToFavorites={handleAddToFavorites}
           isInFavorites={favorites && favorites.some(m => m.imdbID === movie.imdbID)}
           favorites={favorites}
           addToFavorites={addToFavorites}
           removeFromFavorites={removeFromFavorites}
         />
+
       </div>
+      {showDetails && (
+        <div>
+          <p>Plot: {movie.Plot}</p>
+          <p>Runtime: {movie.Runtime}</p>
+          <p>Rating: {movie.imdbRating}</p>
+          <p>Year: {movie.Year}</p>
+        </div>
+      )}
+
     </div>
   );
 };
