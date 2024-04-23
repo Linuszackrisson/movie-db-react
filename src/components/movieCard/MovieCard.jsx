@@ -1,22 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './movieCard.css'; // Importera CSS-filen för stilar
+import './movieCard.css'; // Import CSS file for styles
 import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
-import defaultmoviejpg from '../../assets/default-movie.jpg'; // Importera en standardbild
+import defaultmoviejpg from '../../assets/default-movie.jpg'; // Import default image
 
 const MovieCard = ({
   movie,
   handleAddToWatchlist,
   handleAddToFavorites,
-  isInWatchlist,
-  isInFavorites,
   watchlist,
   favorites,
-  addToFavorites,
-  addToWatchlist,
-  removeFromFavorites,
-  removeFromWatchlist,
   showDetails
 }) => {
   const altText = "Movie poster";
@@ -35,19 +29,12 @@ const MovieCard = ({
           movie={movie}
           handleAddToWatchlist={handleAddToWatchlist}
           isInWatchlist={watchlist && watchlist.some(m => m.imdbID === movie.imdbID)}
-          watchlist={watchlist}
-          addToWatchlist={addToWatchlist}
-          removeFromWatchlist={removeFromWatchlist}
         />
         <AddToFavoritesButton
           movie={movie}
           handleAddToFavorites={handleAddToFavorites}
           isInFavorites={favorites && favorites.some(m => m.imdbID === movie.imdbID)}
-          favorites={favorites}
-          addToFavorites={addToFavorites}
-          removeFromFavorites={removeFromFavorites}
         />
-
       </div>
       {showDetails && (
         <div className='movie-details-text'>
@@ -69,7 +56,6 @@ const MovieCard = ({
           
         </div>
       )}
-
     </div>
   );
 };

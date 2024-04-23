@@ -3,21 +3,16 @@ import React from 'react';
 import Watchlist from '../../components/watchlist/Watchlist' 
 
 const WatchlistPage = ({ 
-  favorites,
-  watchlist,
-  removeFromWatchlist, 
-  handleAddToWatchlist,
-  handleAddToFavorites
+  lists,
+  handleOperations
  }) => {
   return (
     <div className='page__wrapper'>
       <Watchlist 
-      watchlist={watchlist}
-      favorites={favorites} 
+      lists={lists}
+      {...lists} 
       showList={true}
-      removeFromWatchlist={removeFromWatchlist}
-      handleAddToWatchlist={handleAddToWatchlist}
-      handleAddToFavorites={handleAddToFavorites}
+      handleOperations={handleOperations}
       />
     </div>
   );

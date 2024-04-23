@@ -3,21 +3,16 @@ import React from 'react';
 import FavoriteList from '../../components/favorites/Favorites'; 
 
 const FavoritesPage = ({ 
-  favorites,
-  watchlist,
-  removeFromFavorites,
-  handleAddToFavorites,
-  handleAddToWatchlist 
+  lists,
+  handleOperations
 }) => {
   return (
     <div className='page__wrapper'>
       <FavoriteList 
-      favorites={favorites}
-      watchlist={watchlist} 
+      lists={lists}
+      {...lists}
       showList={true}
-      removeFromFavorites={removeFromFavorites}
-      handleAddToFavorites={handleAddToFavorites}
-      handleAddToWatchlist={handleAddToWatchlist}
+      handleOperations={handleOperations}
        />
     </div>
   );

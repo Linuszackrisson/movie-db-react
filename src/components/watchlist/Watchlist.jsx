@@ -1,15 +1,12 @@
 import React from 'react';
 import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
 import './watchlist.css'
-import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
-import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
 
 const Watchlist = ({ 
-  favorites,
+  lists,
   watchlist,
   showList, 
-  handleAddToFavorites,
-  handleAddToWatchlist
+  handleOperations
 }) => {
 
   if (!watchlist) {
@@ -29,10 +26,8 @@ const Watchlist = ({
             <div key={movie.id || index}>
             <MovieCard 
             movie={movie} 
-            favorites={favorites}
-            watchlist={watchlist}
-            handleAddToFavorites={handleAddToFavorites}
-            handleAddToWatchlist={handleAddToWatchlist}
+            {...lists}
+            {...handleOperations}
             />
           </div>
           ))}
