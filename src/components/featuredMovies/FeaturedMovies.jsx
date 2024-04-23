@@ -70,7 +70,8 @@ const FeaturesMovies = ({
             favorites={favorites}
             watchlist={watchlist}
             handleAddToWatchlist={handleAddToWatchlist}
-            handleAddToFavorites={handleAddToFavorites} 
+            handleAddToFavorites={handleAddToFavorites}
+            
             />
         ))}
       </div>

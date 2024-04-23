@@ -32,7 +32,8 @@ const FavoriteList = ({
             favorites={favorites}
             watchlist={watchlist}
             handleAddToFavorites={handleAddToFavorites}
-            handleAddToWatchlist={handleAddToWatchlist} 
+            handleAddToWatchlist={handleAddToWatchlist}
+            showDetails={false}  
             />
           </div>
             

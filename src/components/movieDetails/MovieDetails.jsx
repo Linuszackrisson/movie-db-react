@@ -46,26 +46,29 @@ const MovieDetails = ({
   }
 
 
-  
+
 
   return (
+
     <div>
       <MovieCard
-      key={movie.id} movie={movie}
-      handleAddToWatchlist={handleAddToWatchlist}
-      handleAddToFavorites={handleAddToFavorites}
-      watchlist={watchlist}
-      favorites={favorites}
-      addToFavorites={{addToFavorites}}
-      addToWatchlist={addToWatchlist}
-      removeFromFavorites={removeFromFavorites}
-      removeFromWatchlist={removeFromWatchlist}
-       />
-      <p>Plot: {movie.Plot}</p>
-      <p>Runtime: {movie.Runtime}</p>
-      <p>Rating: {movie.imdbRating}</p>
-      <p>Year: {movie.Year}</p>
+
+        key={movie.id} movie={movie}
+        handleAddToWatchlist={handleAddToWatchlist}
+        handleAddToFavorites={handleAddToFavorites}
+        watchlist={watchlist}
+        favorites={favorites}
+        addToFavorites={{ addToFavorites }}
+        addToWatchlist={addToWatchlist}
+        removeFromFavorites={removeFromFavorites}
+        removeFromWatchlist={removeFromWatchlist}
+        showDetails={true} // This will render the details
+      />
+      
     </div>
+
+
+
   );
 };
 
