@@ -24,7 +24,7 @@ const FeaturesMovies = ({ lists,
 
   return (
     <>
-      <h2 className="Tips-title">You May also like</h2>
+      <h2 className="Tips-title">You may also like</h2>
       <div className="movie-grid-container">
         {movies.map((movie, index) => (
           <MovieCard
