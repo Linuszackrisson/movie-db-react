@@ -4,7 +4,7 @@ import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
 import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
 import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
 import MovieCard from '../../components/movieCard/MovieCard';
-
+import './movieDetails.css'
 const MovieDetails = ({
   imdbID,
   movie,
@@ -50,9 +50,10 @@ const MovieDetails = ({
 
   return (
 
-    <div>
+    <div className='page__wrapper'>
+      <div className="movie-details-card">
       <MovieCard
-
+      
         key={movie.id} movie={movie}
         handleAddToWatchlist={handleAddToWatchlist}
         handleAddToFavorites={handleAddToFavorites}
@@ -64,7 +65,7 @@ const MovieDetails = ({
         removeFromWatchlist={removeFromWatchlist}
         showDetails={true} // This will render the details
       />
-      
+      </div>
     </div>
 
 
