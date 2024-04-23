@@ -15,7 +15,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
 
-  /// State managing for selected movie. Used in combination with the add/remove buttons
+  /// State managing for selected movie
   const [movie, setMovie] = useState(null);
 
 
@@ -54,60 +54,47 @@ function App() {
     }
   };
 
+  // Objects for sending related props
+  const handleOperations = {
+    handleAddToFavorites,
+    handleAddToWatchlist
+  }
+  const lists = {
+    favorites,
+    watchlist
+  }
+  const movieState = {
+    movie,
+    setMovie
+  }
+
 
   return (
     <Router >
       <Header />
       <Routes className="page__wrapper">
         <Route path="/" element={<FeaturesMovies
-        handleAddToFavorites={handleAddToFavorites}
-        handleAddToWatchlist={handleAddToWatchlist}
-        favorites={favorites}
-        watchlist={watchlist}
-        addToFavorites={addToFavorites}
-        addToWatchlist={addToWatchlist}
-        removeFromFavorites={removeFromFavorites}
-        removeFromWatchlist={removeFromWatchlist}
-        
-        
+          handleOperations={handleOperations}
+          lists={lists}
+          {...lists}
         />} />
         <Route path="/movie-details/:imdbID" element={<MovieDetailsPage
-          movie={movie}
-          setMovie={setMovie} 
-          addToFavorites={addToFavorites} 
-          removeFromFavorites={removeFromFavorites} 
-          addToWatchlist={addToWatchlist} 
-          removeFromWatchlist={removeFromWatchlist} 
-          favorites={favorites} 
-          watchlist={watchlist} 
-          handleAddToWatchlist={handleAddToWatchlist} 
-          handleAddToFavorites={handleAddToFavorites}
+          movieState={movieState} 
+          handleOperations={handleOperations}
+          {...lists}
+          lists={lists}
         />} />
         <Route path="/favorites" element={<FavoritesPage
-          movie={movie}
-          favorites={favorites}
-          watchlist={watchlist} 
-          removeFromFavorites={removeFromFavorites}
-          handleAddToFavorites={handleAddToFavorites}
-          handleAddToWatchlist={handleAddToWatchlist} 
+          handleOperations={handleOperations}
+          lists={lists}
         />} />
         <Route path="/watchlist" element={<WatchlistPage
-          movie={movie}
-          favorites={favorites}
-          watchlist={watchlist} 
-          removeFromWatchlist={removeFromWatchlist}
-          handleAddToFavorites={handleAddToFavorites}
-          handleAddToWatchlist={handleAddToWatchlist} 
+          handleOperations={handleOperations}
+          lists={lists}
         />} />
         <Route path="/search/:searchTerm" element={<SearchResultPage
-        handleAddToFavorites={handleAddToFavorites}
-        handleAddToWatchlist={handleAddToWatchlist}
-        favorites={favorites}
-        watchlist={watchlist}
-        addToFavorites={addToFavorites}
-        addToWatchlist={addToWatchlist}
-        removeFromFavorites={removeFromFavorites}
-        removeFromWatchlist={removeFromWatchlist} 
+          handleOperations={handleOperations}
+          lists={lists}
         />} />
       </Routes>
     </Router>

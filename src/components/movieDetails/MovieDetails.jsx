@@ -1,7 +1,5 @@
 // MovieDetails.jsx
 import React, { useState, useEffect } from 'react';
-import AddToFavoritesButton from '../addToFavoritesButton/AddToFavoritesButton';
-import AddToWatchlistButton from '../addToWatchlistButton/AddToWatchlistButton';
 import { fetchMovieDetails, fetchMovieLogo } from '../../../api';
 import MovieCard from '../../components/movieCard/MovieCard';
 
@@ -9,14 +7,8 @@ const MovieDetails = ({
   imdbID,
   movie,
   setMovie,
-  addToFavorites,
-  removeFromFavorites,
-  addToWatchlist,
-  removeFromWatchlist,
-  favorites,
-  watchlist,
-  handleAddToFavorites,
-  handleAddToWatchlist
+  lists,
+  handleOperations
 }) => {
   const [logoURL, setLogoURL] = useState('');
   const [error, setError] = useState(null);
@@ -54,17 +46,11 @@ const MovieDetails = ({
       <MovieCard
 
         key={movie.id} movie={movie}
-        handleAddToWatchlist={handleAddToWatchlist}
-        handleAddToFavorites={handleAddToFavorites}
-        watchlist={watchlist}
-        favorites={favorites}
-        addToFavorites={{ addToFavorites }}
-        addToWatchlist={addToWatchlist}
-        removeFromFavorites={removeFromFavorites}
-        removeFromWatchlist={removeFromWatchlist}
+        {...handleOperations}
+        {...lists}
         showDetails={true} // This will render the details
       />
-      
+
     </div>
 
 

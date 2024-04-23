@@ -5,14 +5,8 @@ import MovieCard from "../../components/movieCard/MovieCard";
 import "./searchResultPage.css";
 
 const SearchResultPage = ({
-  favorites,
-  watchlist,
-  addToFavorites,
-  addToWatchlist,
-  removeFromFavorites,
-  removeFromWatchlist,
-  handleAddToFavorites,
-  handleAddToWatchlist
+  lists,
+  handleOperations
 }) => {
   const { searchTerm } = useParams();
   const [searchResults, setSearchResults] = useState([]);
@@ -38,14 +32,9 @@ const SearchResultPage = ({
           <MovieCard 
           key={movie.imdbID} 
           movie={movie}
-          handleAddToFavorites={handleAddToFavorites}
-          handleAddToWatchlist={handleAddToWatchlist}
-          favorites={favorites}
-          watchlist={watchlist}
-          addToFavorites={addToFavorites}
-          addToWatchlist={addToWatchlist}
-          removeFromFavorites={removeFromFavorites}
-          removeFromWatchlist={removeFromWatchlist}  />
+          {...lists}
+          {...handleOperations}
+            />
         ))}
       </div>
     </div>
