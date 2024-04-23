@@ -42,12 +42,13 @@ const SearchBar = () => {
           className="search__input"
           type="text"
           placeholder="Search movies..."
+          aria-label="Search movies" 
           value={searchTerm}
           onChange={handleSearchChange}
           onFocus={() => setShowDropdown(searchResults.length > 0)}
           onBlur={handleInputBlur}
         />
-        <button className="search__btn" type="submit">
+        <button className="search__btn" type="submit" aria-label="Search">
           <MagnifyingGlass size={18} weight="bold" />
         </button>
       </form>
