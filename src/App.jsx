@@ -8,7 +8,6 @@ import WatchlistPage from './page/watchlistPage/WatchlistPage';
 import SearchResultPage from './page/searchResultPage/SearchResultPage';
 import Footer from './components/footer/Footer';
 import './index.css';
-import './app.css';
 
 function App() {
 
@@ -71,7 +70,7 @@ function App() {
   
   return (
     <Router >
-      <Header /> {/* Put header outside Routes so it is always rendered */}
+      <Header />
       <Routes className="page__wrapper">
         <Route path="/" element={<HomePage
           handleOperations={handleOperations}

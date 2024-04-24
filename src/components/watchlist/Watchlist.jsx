@@ -1,4 +1,4 @@
-import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
+import MovieCard from '../../components/movieCard/MovieCard';
 import './watchlist.css'
 
 const Watchlist = ({ 
@@ -16,7 +16,6 @@ const Watchlist = ({
       <>
         <h1>Watchlist movies</h1>
         <div className="movie-grid-container">
-          {/* Använd MovieCard för att rendera varje film i watchlistan */}
           {watchlist.map((movie, index) => (
             <div key={movie.id || index}>
             <MovieCard 

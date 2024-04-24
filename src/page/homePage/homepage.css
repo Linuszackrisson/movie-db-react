@@ -12,7 +12,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Ändrat från space-between till center */
+  justify-content: center;
 }
 
 .Featured-title {
@@ -48,12 +48,12 @@
 .text-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ändrat från space-evenly till space-between */
-  height: 100%; /* Lägg till för att säkerställa att texten tar upp hela utrymmet vertikalt */
+  justify-content: space-between;
+  height: 100%;
 }
 
 .movie-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Antal kolumner baserat på föräldrakontainerns bredd, minst 240px breda */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
-  }
+}
