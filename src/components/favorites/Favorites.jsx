@@ -16,7 +16,6 @@ const FavoriteList = ({
       <>
         <h1>Favorite movies</h1>
         <div className="movie-grid-container">
-          {/* Använd MovieCard för att rendera varje favoritfilm */}
           {favorites.map((movie, index) => (
             <div key={movie.id || index}>
             <MovieCard 
