@@ -9,6 +9,8 @@
     --secondary-color: #6c757d;
     --details-color: #c0c0c0;
     --surface-color: #161616;
+    --card-color: #161616;
+    --card-border: solid .5px #282828;
     --border-radius: 0.25rem;
 }
 
@@ -54,17 +56,4 @@ h3 {
     max-width: 1100px;
     margin: 0 auto;
     padding: .5rem;
-}
-
-.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.WatchlistButton, .FavoriteButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }

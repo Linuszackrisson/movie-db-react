@@ -41,7 +41,7 @@
 }
 
 .search__btn:active {
-  color: var(--details-color);
+  color: #555555;
 }
 
 .search-result__list {

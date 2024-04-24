@@ -7,30 +7,31 @@
   text-align: center;
   text-decoration: none;
   min-width: 240px;
-  padding: 0.5rem;
-  background-color: #161616;
+  background-color: var(--card-color);
   border-radius: var(--border-radius);
-  border: solid .5px #1a1919;
-  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Lägg till filter-transition */
+  border: var(--card-border);
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 
 .movie-card:hover  {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  filter: brightness(115%); /* Öka ljusstyrkan när musen svävar över */
+  filter: brightness(115%);
 }
 
 .movie-card img {
-  width: 240px;
-  height: 320px;
   object-fit: cover;
-  border-radius: var(--border-radius);
-  
+  width: 300px;
+  max-width: 100%;
+  height: 400px;
+  max-height: 100%;
+  border-radius: 4px 4px 0 0;
 }
-
-
 
 .movie-title {
   margin: 0;
+  padding: .2rem .5rem .7rem;
+  font-size: 18px;
+  line-height: 1.6rem;
 }
 
 .movie-buttons {
@@ -40,44 +41,58 @@
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
-  
-  
 }
 
-/* Justera storlek och utseende på knapparna efter behov */
 .movie-buttons button {
-  margin-bottom: 5px;
-  
-  border: none;
-  border-radius: 5px;
+  border: 1px solid #bebebe;
   cursor: pointer;
-  background-color: #c0c0c0;
+  background-color: var(--details-color);
   box-shadow: 0 0 2px rgba(46, 46, 46, 0.381);
-  backdrop-filter: blur(120px);
+  backdrop-filter: blur(80px);
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  transition: .1s transform ease-in;
+}
+
+.movie-buttons button:active {
+  color: #d6d6d625;
+}
+
+.WatchlistButton,
+.FavoriteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
   
+  span {
+    z-index: 20;
+  }
   
-  
+  &:after {
+    background: #737373;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
 }
-
-/* Stilar för favoritknappen */
-.addToFavorites {
-  background-color: #f8d7da;
-  color: #721c24;
+.WatchlistButton:hover,
+.FavoriteButton:hover { 
+  &:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
 }
-
-.addToFavorites:hover {
-  background-color: #f5c6cb;
-}
-
-/* Stilar för watchlist-knappen */
-.addToWatchlist {
-  background-color: #cce5ff;
-  color: #004085;
-}
-
-.addToWatchlist:hover {
-  background-color: #b8daff;
+.WatchlistButton:active,
+.FavoriteButton:active { 
+  transform: scale(.98);
 }
