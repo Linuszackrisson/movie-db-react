@@ -7,39 +7,44 @@ Svara på var och en av frågorna nedan som grupp, minst 100 tecken per fråga.
 ### Inledning
 
 #### Sammanfatta projektets syfte, samt era gemensamma mål
-(insert answer here...)
+Utöver att uppfylla alla krav och user stories hade vi som mål att skapa den mest tilltalande och användarvänliga filmdatabasen. Mycket arbete har fokuserats på smådetaljer för att skapa en upplevelse som känns mer exklusiv vid användning av sidan.
 
 #### Hur upplevde teamet projektet initialt?
-(insert answer here...)
+Vi alla var förväntansfulla och såg fram emot projektet, vårt mål var att få funktionalitet och struktur på plats först, där efter börja med övrig funktionaliet och gränsnitt. Där den förstnämnda utmaningen var lättare sagd än gjord, men det visar ett tecken på att vår prioritering var rätt. 
 
 ### Planering och genomförande
 
 #### Beskriv hur ni inom teamet planerade projektet initialt
-(insert answer here...)
+Vi visste själva i huvudet hur vi ville ha det från början, men vi lade upp en strategiskt plan på github project med flertal issues och började arbeta. Ju längre vi kom in i arbetet ju fler utmaningar och problem lades upp som issues. En vet ofta inte vad en behöver förens man lagt grunden. Vi lade ganska breda issues från början som vi senare delade upp i mindre bitar.
+
+Kan tillägas vi hade ganska fria tyglar gällande issues, men i och med att vi alltid arbetade tillsammans på discord och hade konstant kontakt var det inte nackdel att gå utanför ramen utan snarare en fördel. 
 
 #### Vilka steg har teamet tagit för att utveckla applikationen?
-(insert answer here...)
+Vi började första veckan med möte och genomgång utav projektet och lade sedan upp en plan på github project. Under tidens gång upptäckte vi missar men skapade snabbt nya issues och antog oss utmaningarna direkt. Vi lade fokus på komponenternas struktur och funktionalitet först följt av styling.
 
 ### Teamets utmaningar och lösningar
 
-#### Vika var de största utmaningarna för teamet?
-(insert answer here...)
+#### Vilka var de största utmaningarna för teamet?
+Ingen av oss i gruppen var särskilt bekväma med react och förstod inte riktigt hur props osv fungerade överlag.
+ 
+Att vi även gick utanför ramen flertal gånger och inte riktigt höll oss inom issues och kompoenten vi arbetade i kunde ibland skapa konflikter i koden. 
 
 #### Hur löste eller hanterade teamet dessa utmaningar?
-(insert answer here...)
+Med tydlig klar och rak kommunkation var dessa utamningar mindre jobbiga. Gällande props och hela den biten gjordes en djupdykningen i hur det faktiskt fungerade under projektetens gång. 
 
 #### Vilka kompromisser inom teamet har ni gjort under projektets gång?
-(insert answer here...)
+När vi stött på bariärer som vi inte kunnat ta oss förbi har vi behövt acceptera att vi måste släppa den issuen och tackla en annan för att inte bli fast och ödsla tid. 
 
 ### Teamets reflektion och utvärdering
 
 #### Vad lärde sig gruppen inom projektet?
-(insert answer here...)
+Vi lärde oss värdet av reacts komponenthantering och hur fördelaktigt det egentligen är. Vi upplevde att den har kursen också stärkte vår förmåga att arbeta agilt ytterligare, te.x i branscher. 
 
 #### Hur kan gruppen förbättra sitt samarbete framöver?
-(insert answer here...)
+Genom att möjligtvis lägga mer tid på studier utöver projektets arbete för att ha mer förståelse av helheten.  
 
 ### Arbeta Agilt
 
 #### Beskriv mer utförligt (minst 300 tecken) på vilket sätt gruppen har arbetat agilt (vilka artefakter, aktiviteter osv har ni använt er av?)
-(insert answer here...)
+
+Vi har använt oss av github projekts för att skapa user stories samt issues, vi har även varit nogranna med att arbeta i varsin branch och kolla igenom varandras kod före push till dev. Vi har dessvärre inte förhållt oss till fasta tider gällande möten utan istället gjort det när alla varit på plats, oftast på eftermiddagar. Det var något vi samtlade om i början av projektet att vi inte är i behov av fasta tider då vi alla varit tillgängliga större delen av dagen. Gällande artefakter så är det Discord vi flitigt uppdatert när ändringar gjorts eller skall göras. Vi har gjort en kanal med separata kanaler för kod, länkar och övrig diskussion. Behovet av övriga artefakter har inte varit så stor då vår kommunkation har varit såpass bra. 
