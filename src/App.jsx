@@ -6,6 +6,7 @@ import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import FavoritesPage from './page/favoritesPage/FavoritesPage';
 import WatchlistPage from './page/watchlistPage/WatchlistPage';
 import SearchResultPage from './page/searchResultPage/SearchResultPage';
+import Footer from './components/footer/Footer';
 import './index.css';
 import './app.css';
 
@@ -95,7 +96,7 @@ function App() {
           lists={lists}
         />} />
       </Routes>
-      {/* footer here */}
+      <Footer />
     </Router>
   );
 }
