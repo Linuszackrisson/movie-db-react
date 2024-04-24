@@ -8,7 +8,6 @@ const AddToWatchlistButton = ({
   movie,
 }) => {
   return (
-    <>
       <button className='WatchlistButton' onClick={() => handleAddToWatchlist(movie)}>
         {isInWatchlist ? (
             <Bookmark className='icon' size={22} color="#2160b7" weight="fill" /> 
@@ -16,7 +15,6 @@ const AddToWatchlistButton = ({
             <Bookmark className='icon' size={22} weight='bold' />
         )}
       </button>
-    </>
   );
 };
 

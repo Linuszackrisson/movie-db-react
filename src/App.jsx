@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './page/homePage/HomePage';
+import HomePage from './page/homePage/HomePage';
 import Header from './components/header/Header';
 import MovieDetailsPage from './page/movieDetailsPage/MovieDetailsPage';
 import FavoritesPage from './page/favoritesPage/FavoritesPage';
@@ -15,7 +15,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
 
-  /// State managing for selected movie
+  // State managing for selected movie
   const [movie, setMovie] = useState(null);
 
 
@@ -70,9 +70,9 @@ function App() {
   
   return (
     <Router >
-      <Header />
+      <Header /> {/* Put header outside Routes so it is always rendered */}
       <Routes className="page__wrapper">
-        <Route path="/" element={<Home
+        <Route path="/" element={<HomePage
           handleOperations={handleOperations}
           lists={lists}
         />} />

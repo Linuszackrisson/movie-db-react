@@ -1,24 +1,19 @@
-import React from 'react';
 import MovieCard from '../../components/movieCard/MovieCard'; // Importera MovieCard-komponenten
 import './watchlist.css'
 
 const Watchlist = ({ 
   lists,
   watchlist,
-  showList, 
   handleOperations
 }) => {
 
-  if (!watchlist) {
-    console.log("Watchlist is undefined or null");
-    return <p>Loading watchlist...</p>;
-  }
-
-  if (showList) {
-    console.log("Watchlist:", watchlist);
-
+    if (!watchlist) {
+      console.log("Watchlist is undefined or null");
+      return <p>Loading watchlist...</p>;
+    }
+    
     return (
-      <div>
+      <>
         <h1>Watchlist movies</h1>
         <div className="movie-grid-container">
           {/* Använd MovieCard för att rendera varje film i watchlistan */}
@@ -32,12 +27,8 @@ const Watchlist = ({
           </div>
           ))}
         </div>
-      </div>
+      </>
     );
-  } else {
-    console.log("Watchlist:", watchlist);
-    return null; // Return null to avoid rendering the list visually
-  }
 };
 
 export default Watchlist;

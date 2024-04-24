@@ -1,5 +1,4 @@
 //WatchlistPage.jsx
-import React from 'react';
 import Watchlist from '../../components/watchlist/Watchlist' 
 
 const WatchlistPage = ({ 
@@ -11,7 +10,6 @@ const WatchlistPage = ({
       <Watchlist 
       lists={lists}
       {...lists} 
-      showList={true}
       handleOperations={handleOperations}
       />
     </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Bookmark } from "@phosphor-icons/react";
 import "./nav.css";

@@ -1,5 +1,4 @@
 //FavoritesPage.jsx
-import React from 'react';
 import FavoriteList from '../../components/favorites/Favorites'; 
 
 const FavoritesPage = ({ 
@@ -11,7 +10,6 @@ const FavoritesPage = ({
       <FavoriteList 
       lists={lists}
       {...lists}
-      showList={true}
       handleOperations={handleOperations}
        />
     </div>
