@@ -37,15 +37,11 @@ const MovieDetails = ({
     return <div>Loading...</div>;
   }
 
-
-
-
   return (
 
     <div className='page__wrapper'>
       <div className="movie-details-card">
       <MovieCard
-      
         key={movie.id} movie={movie}
         {...handleOperations}
         {...lists}
@@ -53,9 +49,6 @@ const MovieDetails = ({
       />
       </div>
     </div>
-
-
-
   );
 };
 

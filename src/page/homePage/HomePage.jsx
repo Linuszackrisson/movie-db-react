@@ -1,14 +1,14 @@
 // HomePage.jsx
-
-import React from 'react';
 import FeaturesMovies from '../../components/featuredMovies/FeaturedMovies'
 import './homepage.css'
 
-const Home = ({
+const HomePage = ({
     handleOperations,
     lists
 }) => {
   return (
+
+    /* Rendering hard coded stuff for the home page */
     <div className='page__wrapper'>
         <section className="featured-today">
         <div className="video-container">
@@ -44,9 +44,9 @@ const Home = ({
     <FeaturesMovies
     handleOperations={handleOperations}
     lists={lists}
-    {...lists} />
+    />
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
