@@ -19,7 +19,7 @@ const Watchlist = ({
 
     return (
       <div>
-        <h1>Watchlist Movies</h1>
+        <h1>Watchlist movies</h1>
         <div className="movie-grid-container">
           {/* Använd MovieCard för att rendera varje film i watchlistan */}
           {watchlist.map((movie, index) => (

@@ -1,4 +1,4 @@
-// Home.jsx
+// HomePage.jsx
 
 import React from 'react';
 import FeaturesMovies from '../../components/featuredMovies/FeaturedMovies'

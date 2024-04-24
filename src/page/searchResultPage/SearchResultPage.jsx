@@ -26,7 +26,7 @@ const SearchResultPage = ({
 
   return (
     <div className="page__wrapper">
-      <h1>Search Results for {searchTerm}</h1>
+      <h1>Search results for {searchTerm}</h1>
       <div className="movie-grid-container">
         {searchResults.map((movie) => (
           <MovieCard 

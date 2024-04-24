@@ -67,8 +67,7 @@ function App() {
     movie,
     setMovie
   }
-
-
+  
   return (
     <Router >
       <Header />
@@ -76,7 +75,6 @@ function App() {
         <Route path="/" element={<Home
           handleOperations={handleOperations}
           lists={lists}
-          {...lists}
         />} />
         <Route path="/movie-details/:imdbID" element={<MovieDetailsPage
           movieState={movieState} 
@@ -97,6 +95,7 @@ function App() {
           lists={lists}
         />} />
       </Routes>
+      {/* footer here */}
     </Router>
   );
 }

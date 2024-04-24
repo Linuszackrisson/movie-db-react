@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { fetchRandomMovies } from '../../../api.js';
 import MovieCard from '../movieCard/MovieCard.jsx';
 
-const FeaturesMovies = ({ lists,
-  watchlist,
-  favorites,
+const FeaturesMovies = ({ 
+  lists,
   handleOperations
 }) => {
   const [movies, setMovies] = useState([]);
@@ -24,15 +23,13 @@ const FeaturesMovies = ({ lists,
 
   return (
     <>
-      <h2 className="Tips-title">You may also like</h2>
+      <h2 className="Tips-title">Trending movies</h2>
       <div className="movie-grid-container">
         {movies.map((movie, index) => (
           <MovieCard
             key={index}
             movie={movie}
             {...handleOperations}
-            isInFavorites={favorites.some((favMovie) => favMovie.imdbID === movie.imdbID)}
-            isInWatchlist={watchlist.some((watchlistMovie) => watchlistMovie.imdbID === movie.imdbID)}
             {...lists}
           />
         ))}
